@@ -1,0 +1,435 @@
+<!DOCTYPE html>
+    <html>
+        <head>
+            <meta charset="UTF-8">
+            <title>Web responciva</title>
+            <link rel="stylesheet" type="text/css" href="css/styledoc.css"/>
+            <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        </head>
+        <body>
+            <nav id="navbar">
+                <header>
+                    <h1>Web Responsive</h2>
+                </header>
+                <ol>
+                    <li><a class="nav-link" href="#La_importancia_del_diseño_en_el_responsive_con_CSS">
+                        La importancia del diseño en el responsive con CSS
+                    </a></li>
+                    <li><a class="nav-link" href="#Diseño_líquido_versus_diseño_flexible_en_CSS">
+                        Diseño líquido versus diseño flexible en CSS
+                    </a></li>
+                    <li><a class="nav-link" href="#Por_dónde_empezar_en_cuanto_al_diseño_del_HTML">
+                        Por dónde empezar en cuanto al diseño del HTML
+                    </a></li>
+                    <li><a class="nav-link" href="#Qué_es_viewport_y_cómo_usarlo_para_lograr_buenos_resultados">
+                        Qué es viewport y cómo usarlo para lograr buenos resultados
+                    </a></li>
+                    <li><a class="nav-link" href="#Entender_las_herramientas_mediaquery_del_diseño_responsive">
+                        Entender las herramientas mediaquery del diseño responsive
+                    </a></li>
+                    <li><a class="nav-link" href="#Usar_una_rejilla_flexible_mediante_el_uso_adecuado_de_CSS">
+                        Usar una rejilla flexible mediante el uso adecuado de CSS
+                    </a></li>
+                    <li><a class="nav-link" href="#Imágenes_responsivas_dentro_de_un_documento_HTML_con_CSS">
+                        Imágenes responsivas dentro de un documento HTML con CSS
+                    </a></li>
+                    <li><a class="nav-link" href="#Texto_responsivo_integrado_en_el_diseño_y_en_el_uso_de_CSS">
+                        Texto responsivo integrado en el diseño y en el uso de CSS
+                    </a></li>
+                    <li><a class="nav-link" href="#Cómo_trabajar_con_herramientas_CSS_al_maquetar_el_documento">
+                        Cómo trabajar con herramientas CSS al maquetar el documento
+                    </a></li>
+                    <li><a class="nav-link" href="#Orden_lógico_de_trabajo_dentro_del_proyecto_web_responsive">
+                        Orden lógico de trabajo dentro del proyecto web responsive
+                    </a></li>
+                    <li><a class="nav-link" href="#Creación_del_HTML5_e_implementación_dentro_del_responsive">
+                        Creación del HTML5 e implementación dentro del responsive
+                    </a></li>
+                    <li><a class="nav-link" href="#Creación_del_CSS3_e_implementación_en_la_web_responsive">
+                        Creación del CSS3 e implementación en la web responsive
+                    </a></li>
+                    <li><a class="nav-link" href="#Las_mediaquery_y_su_implementación_en_la_web_responsive">
+                        Las mediaquery y su implementación en la web responsive
+                    </a></li>
+                </ol>
+            </nav>
+            <main id="main-doc">
+                <section class="main-section" id="La_importancia_del_diseño_en_el_responsive_con_CSS">
+                    <header>
+                        <h2>La importancia del diseño en el responsive con CSS</h2>
+                    </header>
+                        <p>Cuando trabajamos con páginas web <em>"responsive"</em>, el diseño es una 
+                        parte muy importante del mismo. Necesitamos evaluar o hablar con nuestro diseñador 
+                        para comentarle cuáles son las opciones viables a la hora de realizar un diseño 
+                        <em>"responsive"</em>. Si en nuestro equipo de trabajo ya existe un diseñador, 
+                        él ya habrá pensado en todas estas cosas. Si no lo tenemos, somos nosotros los que 
+                        tendremos que dar un poco más de nuestros conocimientos a la hora de hacer un diseño 
+                        <em>"responsive".</em></p>
+                        <code><ul>
+                            <li>Por un lado, tenemos distintos patrones de diseño.</li> 
+                            <li>Por otro, el sistema de columnas, los <em>"breaking points"</em> y darnos 
+                            cuenta de que un <strong>píxel no es lo mismo que un EM y tampoco es lo mismo 
+                            que un REM</strong>.
+                         </ul></code> 
+                </section>
+                <section class="main-section" id="Diseño_líquido_versus_diseño_flexible_en_CSS">
+                    <header>
+                        <h2>Diseño líquido versus diseño flexible en CSS</h2>
+                    </header>
+                        <p>Vamos a ver la diferencia existente entre líquido y flexible. Vamos a aprender a 
+                        diferenciar cuál es cada cosa y cómo poder utilizarlo en nuestro beneficio.</p>
+                        <p>Lo primero que tenemos que tener claro es que existen distintas medidas a la hora 
+                        de realizar CSS. Estas pueden ser:</p>
+                        <code><ul>
+                            <li>píxeles,</li> 
+                            <li>EM,</li> 
+                            <li>REM,</li> 
+                            <li>también existen porcentajes.</li>
+                        </ul></code> 
+                        <p>Podríamos definir un porcentaje, por ejemplo, del 10 %. Y también existen otro tipo 
+                        de nomenclaturas actualmente de cara a los dispositivos, sobre todo, de pantalla de 
+                        retina y todo este tipo de elementos. Esos, de momento, no los vamos a ver.</p>
+                        <p>Vamos a meternos un poco con lo que es la base de las estructuras. En este caso, 
+                        píxeles, EM, REM y tantos por ciento. Lo primero que tenemos que tener claro cuando 
+                        trabajamos con este tipo de medidas es para qué sirve cada una y qué función tiene.</p> 
+                        <p>Puede resultar absurdo que yo os esté intentando explicar esto, pero es más importante 
+                        de lo que creéis. Cuando estamos trabajando con un <em>"site responsive"</em>, debemos 
+                        ser conscientes de las herramientas que tenemos al alcance de nuestra mano. Por ello, 
+                        os voy a explicar brevemente cuáles son las diferencias entre cada uno de ellos.</p>
+                        <p>Imaginaos que tenemos un texto, Este texto está englobado en una capa, el texto es 
+                        básico, no tiene ningún tipo de estilo, exceptuando dos clases: una, la clase 'text', 
+                        que le da 15 píxeles, y la clase 'content', que define que el ancho del contenedor 
+                        es de 450 píxeles. Vamos a modificar las clases para colocar EM. En este caso, estoy 
+                        poniendo la clase 'content' EM, que le define que tiene 24 EM. Si yo salvo y actualizo, 
+                        se me está modificando el tamaño, pero se me está modificando el tamaño para que sean 
+                        24 EM. La pregunta realmente es: ¿Qué son 24 EM? ¿Cómo calcula él esos 24 EM? Esos 24 EM 
+                        son calculados en base al tamaño fuente que viene por sistema en el 'body'. Es decir, 
+                        aunque nosotros no se lo pongamos, el 'body' tiene un tamaño de fuente, normalmente el 
+                        de nuestro navegador. Por ello, cuando trabajamos con <em>"responsive"</em> es aconsejable 
+                        definir un 'font size' en el 'body'. Si trabajamos con EM, lo lógico sería que fuera un EM 
+                        para que os hagáis una idea, un EM, aproximadamente, es equivalente a 16 píxeles, pero 
+                        solo a partir de aquí hacia arriba es correspondiente y, hacia abajo, hay algunas décimas 
+                        que van bailando. ¿Qué significa esto? 0,6 EM son diez píxeles, pero 0,72 son 12, es decir, 
+                        no es una regla exacta. Os aconsejo que os hagáis con una calculadora de EM para poder 
+                        utilizar esto.</p>
+                        <p>Si yo especificó que el 'font size' es de 1 EM y me voy a mi navegador, ahora tenemos 
+                        que 24 EM sería por 16 y sacaríamos los píxeles que tiene. ¿Cuál es el problema o el 
+                        hándicap a la hora de utilizar EM? Bien, el hándicap a la hora de utilizar EM es que 
+                        estos son hereditarios. Si nosotros ponemos que el texto sea en EM, lo que va a hacer 
+                        es calcular en base al padre. En este caso, le estoy diciendo que los EM de este texto 
+                        son uno. En base al padre, 1 EM de 1 EM serían 16 píxeles, pero si yo modifico esto y 
+                        le pongo 0,9 a lo que nosotros creeríamos que son 15 píxeles, él realmente hace la 
+                        conversión en base al padre. Así que, cuando utilicemos EM, hay que tener mucho cuidado 
+                        con las herencias de clase. Lo mismo para los contenedores. Si yo en el 'body', en vez 
+                        de 1 EM, le pongo que sean 2 como fuente base, él automáticamente me va a hacer más 
+                        grande el resto, tanto las fuentes que tengo definidas en EM como los tamaños de contenedor 
+                        que tenemos definidos. Si en vez de 24, le pusiera 30, crecería automáticamente. Y 
+                        solamente cambiando el valor del 'body', modificaría al resto. ¿Por qué? Por la herencia 
+                        de clases.</p> 
+                        <p>¿Cómo podemos evitar que exista esa herencia de clases pero, sin embargo, que siga 
+                        creciendo? <em>Para eso existen los REM</em>. Los REM se utilizan a modo de EM. La 
+                        diferencia es que no heredan del padre el tamaño del texto. De esta manera, podemos 
+                        certificar que esto va a crecer sin afectar a estos tamaños. Todo este tipo de ejemplos 
+                        que estamos viendo, y cómo se usan las nomenclaturas de medidas, es con lo que se pueden 
+                        realizar diseños líquidos y flexibles.</p> 
+                        <p><em>Diseño líquido</em>, ¿qué significa? Diseño líquido significa el hecho de que 
+                        nuestro contenedor sea lo suficientemente líquido como para adaptarse a cualquier otro 
+                        medio. La única manera que tenemos de conseguir que esto funcione correctamente y sea 
+                        flexible sería añadiendo porcentajes. Es tan importante saber manejar las unidades con 
+                        las que estamos trabajando para hacer que nuestros sitios sean <em>"responsive"</em>.
+                </section>
+                <section class="main-section" id="Por_dónde_empezar_en_cuanto_al_diseño_del_HTML">
+                    <header>
+                        <h2>Por dónde empezar en cuanto al diseño del HTML</h2>
+                    </header>
+                        <p>Vamos a ver cómo poder plantear un diseño <em>"responsive"</em> y cuáles son los pasos a 
+                        realizar antes de ponernos con él.</p>
+                        <code><ul>
+                            <li>Lo primero que tenemos que hacer y evaluar es los diseños, Identificaremos cuáles 
+                            son los módulos comunes.</li> 
+                            <li> Segundo qué secciones son las que se modifican a lo largo de cada uno de los 
+                            cortes existentes e intentaremos pensar en cómo realizar el código, de tal manera que 
+                            nos pueda ayudar a la hora de plantear las diferentes vistas.</li> 
+                        </ul></code>
+                        <p>Todo esto lo haremos, bien imprimiendo a papel, si es necesario, los diseños y 
+                        trabajando sobre ellos, bien en el propio programa de edición marcando cuáles serán los 
+                        elementos comunes y cuáles son los elementos que se modifican para cada una de las vistas. 
+                        Es muy importante, y recalco, muy importante empezar a trabajar con el diseño entendiendo 
+                        qué es lo que hace, sacando cuáles son los elementos comunes, como os decía, y evaluando 
+                        cuáles son las secciones que se modifican o que cambian, dependiendo de cada uno de los 
+                        tamaños de pantalla.</p>
+                </section>
+                <section class="main-section" id="Qué_es_viewport_y_cómo_usarlo_para_lograr_buenos_resultados">
+                    <header>
+                        <h2>Qué es viewport y cómo usarlo para lograr buenos resultados</h2>
+                    </header>
+                        <p>Vamos a ver cómo se utiliza y qué es la etiqueta meta <em>'viewport'</em>. Esta 
+                        etiqueta meta nos ayudará a poder controlar correctamente cómo se renderiza y se 
+                        visualiza nuestra página web en un navegador. Si no añadiéramos esta etiqueta meta en 
+                        nuestra página, nuestro navegador no sabría cómo interpretar la página, por lo que, 
+                        además, en nuestros dispositivos móviles, no se mostrará la página adaptada a dispositivo 
+                        móvil, sino que se mostrará tal cual se mostraría en un ordenador de escritorio, es decir, 
+                        con el mismo ancho de pantalla, las tipografías sin adaptar, las imágenes sin adaptar, 
+                        nada adaptado.</p>
+                        <h3>Vamos a pasar a ver cómo funciona y cuáles son sus parámetros.</h3> 
+                        <p>La etiqueta <em>'viewport'</em>, como bien os comentaba, es una etiqueta meta en la 
+                        que definimos el <em>'name'</em> a tipo <em>'viewport'</em> y un <em>'content'</em>. Este 
+                        <em>'content'</em> tiene distintos parámetros.</p>
+                        <code><ul>
+                            <li>Por un lado, tenemos el parámetro de <em>'ancho'</em>, donde vamos a especificar el 
+                            ancho al que queremos que se adapte nuestra página por defecto, y lo normal es poner el 
+                            ancho al tamaño del dispositivo. Así, conseguiremos que nuestra página se adapte por 
+                            completo al tamaño en el que se está renderizando, bien sean 600 píxeles, 500 píxeles o 
+                            300 píxeles.</li> 
+                            <li>Además, tenemos otro parámetro que es el <em>'initial-scale'</em>. Este parámetro lo 
+                            definimos normalmente a uno. Este parámetro lo que hace es decirle a la web a partir de 
+                            qué escala tiene que empezar a verse.</li>
+                            <li>Por otro lado, tenemos el <em>'maximum-scale'</em>, que también lo igualamos a uno. 
+                            He de deciros que este parámetro es optativo. Normalmente, no se pone.</li> 
+                            <li>Y por último, tenemos el parámetro de <em>'escalabilidad del usuario'</em>. Puede ser 
+                            'no' o 'yes'. Con este parámetro, lo que le decimos al navegador es si vamos a permitir 
+                            que el usuario pueda hacer zoom en nuestra página.</li>
+                        </ul></code>
+                        <p>Ese gesto de poder ampliar, cuando estamos dentro de nuestra página, se controla por medio 
+                        de este parámetro. Si se lo pusiéramos a 'yes' y renderizáramos la página en un dispositivo 
+                        móvil, veríamos cómo aun adaptándose al tamaño de nuestra pantalla, podríamos llegar a hacer 
+                        zoom. Si se lo ponemos a 'no', no nos dejaría poder hacer zoom.</p>
+                </section>
+                <section class="main-section" id="Entender_las_herramientas_mediaquery_del_diseño_responsive">
+                    <header>
+                        <h2>Entender las herramientas mediaquery del diseño responsive</h2>
+                    </header>
+                        <p>Vamos a ver qué son las <em>'media queries'</em> y cómo se usan. Lo primero que tengo 
+                        que comentaros es que la <strong>sintaxis</strong> de la <em>'media query'</em> es de la 
+                        siguiente manera: <em>'@media'</em>, <em>'only screen'</em> o <em>'screen'</em> solo, 
+                        también nos valdría, y entonces es cuando empezamos a añadir parámetros. La manera que 
+                        tenemos de añadirlos sería con un <em>'and'</em>. Así conseguiríamos tener nuestra 
+                        <em>'media query'</em> con todos los parámetros.</p>
+                        <p>Los tipos de parámetro que existen para <em>'media queries'</em> son los siguientes:</p> 
+                        <code><ul>
+                            <li>por un lado, podemos definir tanto un mínimo de tamaño de dispositivo como 
+                            un máximo de tamaño dispositivo. Es decir, si yo creara una <em>'media query'</em> 
+                            con estos dos valores, lo que le estaría diciendo sería que quiero que todo lo que yo 
+                            meta aquí dentro afecte a mi dispositivo que, como mínimo, medirá 320 píxeles de ancho 
+                            y, como máximo, 480 píxeles de ancho. ¿Qué significa esto? Que todo lo que yo escribo 
+                            en mi <em>'media query'</em> son parámetros para que él pueda interactuar e interpretar 
+                            cuándo aplicarlos.</li> 
+                            <li>También podremos definirle un <em>'pixel ratio'</em>. Es decir, podríamos 
+                            definirle, de uno a N, el <em>'pixel ratio'</em> que consideramos necesario. 
+                            Dependiendo de cada dispositivo, cada uno tiene un <em>'pixel ratio'</em>. Esto ha 
+                            venido de cara a las pantallas de retina.</li> 
+                            <li>Además de esto, podemos definirle también el tipo de orientación. Tendremos la 
+                            orientación en formato normal o la orientación que yo la suelo llamar "de tumbado".</li>
+                            <li>También tendremos los parámetros de resolución. Podemos definirle una resolución 
+                            mínima, una resolución máxima o una resolución.</li> 
+                            <li>Podemos añadir un ancho mínimo, un ancho máximo, y esto será el ancho mínimo y el 
+                            ancho máximo de la pantalla.</li>
+                        </ul></code>
+                        <p>Una vez explicado esto, ya somos conscientes de qué tipo de parámetros podemos añadir a 
+                        nuestras <em>'media queries'</em> y podemos ver cómo podemos añadir un montón de opciones 
+                        para poder abarcar y que solo se apliquen los estilos a esos elementos en concreto.</p> 
+                        <p>En nuestro proyecto, para trabajar con <em>'media queries'</em>, lo que vamos a hacer 
+                        es definir tres "breaking points". He definido uno para tamaño máximo de 780 píxeles, 
+                        otro para tamaño máximo de 600 y otro para tamaño máximo de 440.</p>
+                </section>
+                <section class="main-section" id="Usar_una_rejilla_flexible_mediante_el_uso_adecuado_de_CSS">
+                    <header>
+                        <h2>Usar una rejilla flexible mediante el uso adecuado de CSS</h2>
+                    </header>
+                        <p>Vamos a ver cómo trabajar una rejilla flexible. Hemos generado un HTML, correctamente 
+                        semántico, y unas CSS, donde hemos definido tema de colores, estructura, rejilla flexible. 
+                        Lo que haremos es generar una rejilla en base a los atributos <em>'flex'</em>. Los hemos 
+                        utilizado para alinear los elementos y poder tener potestad sobre los elementos HTML a la 
+                        hora de ser renderizados en el navegador.</p>
+                        <p>Hemos utilizado, como os decía, los atributos <em>'flex'</em> para generar ese sistema 
+                        de columnados en cada una de ellas y lo vamos a utilizar de cara al <em>"responsive"</em>. 
+                        Como elemento importante, os comentaré que el uso de una rejilla flexible nos ayudará a 
+                        poder trabajar con ella a medida que vamos haciendo el <em>"responsive"</em>. las medidas 
+                        están en píxeles. No están en EM y tampoco están en porcentajes, con lo cual lo que vamos 
+                        a hacer de cara a nuestra rejilla flexible es convertir estas unidades en elementos 
+                        flexibles para nuestro <em>"responsive"</em>. Lo primero que haremos será trabajar con la 
+                        <em>'media query'</em> del iPad o "tablet". Para ello, nos vamos al Chrome, utilizamos la 
+                        extensión de dispositivo móvil. Acordaos siempre de que esté al 100 % cuando no os entra 
+                        en pantalla.</p>
+                        <p>Vamos a ir paso por paso.</p>
+                        <code><ul>
+                            <li>Lo primero: comprobar que nuestra meta <em>'viewport'</em> está colocada.</li>
+                            <li>Lo segundo: irnos a nuestra <em>'media query'</em> y modificar los parámetros de 
+                            los elementos que son fijos, a partir de ahora tendrá un ancho del 100 %, Si salvamos 
+                            y nos vamos al navegador, ahí tendríamos nuestro 100 %, al estar establecido mediante 
+                            rejilla flexible, él automáticamente ya está calculando los huecos necesarios para que 
+                            entre todo. Según diseño, en el iPad ocupa de lado a lado. ¿Qué más elementos somos</li>
+                            <li>lo tercero: Vamos a crear unas clases de orden, mediante el atributo 'order', para 
+                            especificar qué es lo que queremos que se vea primero. Este diseño solo tiene tres 
+                            columnas, así que lo que vamos a hacer es definir tres clases distintas. Una para cada 
+                            orden. Así, podremos aplicar la que nosotros consideremos y solamente se verá afectada 
+                            en estos elementos.</li>
+                        </ul></code> 
+                </section>
+                <section class="main-section" id="Imágenes_responsivas_dentro_de_un_documento_HTML_con_CSS">
+                    <header>
+                        <h2>Imágenes responsivas dentro de un documento HTML con CSS</h2>
+                    </header>
+                        <p>Vamos a ver cómo trabajar con las imágenes cuando estamos trabajando en un diseño 
+                        <em>"responsive"</em>. Tenemos por un lado el HTML con las CSS implementadas, renderizado 
+                        en nuestro navegador y, por otro lado, tenemos nuestro diseño.</p>
+                        <code><ul>
+                            <li>Lo primero será evaluar el tamaño que las imágenes que tenemos para escritorio, 
+                            y qué tamaño tienen para dispositivo móvil. en este caso para iPad es del mismo tamaño 
+                            pero, el dispositivo móvil, es más pequeña.</li> 
+                            <li>lo segundo para trabajar con imágenes en <em>"responsive"</em> es siempre haciendo 
+                            que la imagen tenga un tamaño en porcentajes. Es decir, que lo que haremos será decirle 
+                            que la imagen, como máximo, tenga el 100 % del ancho. De esta manera, nunca se nos va a 
+                            salir del tamaño de pantalla. ¿La altura? Que la calcule automáticamente.</li>
+                        </ul></code>
+                        <p>Así es como trabajaremos con las imágenes responsivas para nuestros diseños web.</p>
+                </section>
+                <section class="main-section" id="Texto_responsivo_integrado_en_el_diseño_y_en_el_uso_de_CSS">
+                    <header>
+                        <h2>Texto responsivo integrado en el diseño y en el uso de CSS</h2>
+                    </header>
+                        <p>Vamos a ver cómo trabajar con los textos, mientras tenemos un diseño web <em>"responsive"</em>. 
+                        <p>Lo primero que deberemos hacer será cambiar los tamaños de las fuentes de píxeles a EM. 
+                        ¿Por qué? Tenemos renderizada una web con píxeles. Si yo hago que la base sea en EM, me da 
+                        la posibilidad de poder hacer que los textos se adapten correctamente a cualquier dispositivo 
+                        de pantalla. Si yo modifico esto, me da la posibilidad de poder modificar los textos y poder 
+                        hacer que sean lo suficientemente legibles como a mí me interese y que crezcan responsivamente. 
+                        Acordaos de que cuando trabajamos con EM, la herencia de clases funciona. Es decir, hay que 
+                        tener cuidado con dónde aplicamos EM. Por eso yo os aconsejo utilizar, en vez de EM, REM. 
+                        Con esto conseguiremos utilizar la unidad como si fuera EM, pero sin heredar esos atributos 
+                        que heredamos con los EM. por lo que lo que haremos será modificar todas las fuentes 
+                        existentes en nuestro "site" a EM, para poder conseguir un texto responsivo. He de 
+                        comentaros que un EM aproximadamente son 16 píxeles, que existen calculadoras online para 
+                        poder generar los EM correctos. Y así tendríamos un texto responsivo. Esto nos ayudará a 
+                        que, cuando estemos en distintos tamaños de pantalla, este texto se adapte dependiendo de 
+                        la resolución de cada pantalla donde lo estemos renderizando.</p>
+                </section>        
+                <section class="main-section" id="Cómo_trabajar_con_herramientas_CSS_al_maquetar_el_documento">
+                    <header>
+                        <h2>Cómo trabajar con herramientas CSS al maquetar el documento</h2>
+                    </header>
+                        <p>Voy a enseñar las herramientas que utilizo yo a la hora de trabajar con un diseño web 
+                        <em>"responsive"</em>. Por un lado, trabajo de base con dos navegadores: Firefox y Chrome, 
+                        cada uno de ellos con los <em>"plugins"</em> necesarios que os comentaré a continuación 
+                        para poder trabajar. Por un lado, en Firefox utilizo el <em>"plugin"</em> Firebug, me 
+                        parece superefectivo ya que podemos tener, de un lado el código, iluminando en todo 
+                        momento cada elemento. He de comentaros que lo que aparece iluminado de color amarillo 
+                        son los "margin" y de color morado, los "paddings".</p>
+                        <p>También nos vienen las clases que están afectando y qué atributos son los que están 
+                        puestos en esas clases, nos viene genial porque cuando estamos renderizando el dispositivo 
+                        de pantalla, podemos ver qué atributos son los que se están sobrescribiendo. Vamos a verlo, 
+                        nos iríamos a Herramientas, Desarrollador web, Vista de diseño adaptable. Cuando hacemos 
+                        esto, el navegador genera una serie de elementos. Tenemos un desplegable con los tamaños 
+                        normalmente generados en las <em>'media queries'</em>, que nos permitirá poder seleccionar 
+                        a qué tamaño de dispositivo queremos que se adapte.</p> 
+                </section>
+                <section class="main-section" id="Orden_lógico_de_trabajo_dentro_del_proyecto_web_responsive">
+                    <header>
+                        <h2>Orden lógico de trabajo dentro del proyecto web responsive</h2>
+                    </header>
+                        <p>Vamos a aprender cuál sería el orden lógico de trabajo a la hora de plantear un diseño 
+                        <em>"responsive"</em>. Lo primero que debemos de tener claro es que necesitamos los diseños 
+                        establecidos tanto en móvil, "tablet" como en "desktop". Por otro lado, tendremos listos y 
+                        preparados nuestros navegadores. En este caso, yo trabajo con Firefox y el Lite Firebug y el 
+                        navegador Chrome. Por otro lado, tendremos nuestro HTML, nuestra hoja de estilos, una 
+                        carpeta de imágenes donde iremos guardando todas las imágenes que necesitemos para realizar 
+                        nuestro HTML y todo ello estará guardado en nuestro disco duro para poder trabajar con ello. 
+                        Una de las cosas más importantes a la hora de trabajar en un diseño <em>"responsive"</em> 
+                        es pensar en si primero programamos el móvil o si primero programamos el <em>"desktop"</em>. 
+                        Podéis encontraros con distintas opiniones al respecto. Yo por mi parte prefiero trabajar 
+                        primero en <em>"desktop"</em> y después ir minimizando hasta llegar al dispositivo móvil. 
+                        De esta manera, conseguiré controlar en su totalidad las etiquetas HTML que se van 
+                        visualizando y mostrando, y colocarlas a mi antojo a medida que voy avanzando por cada 
+                        uno de los tamaños de pantalla. Todo esto lo iré guardando en el HTML y reflejándolo en 
+                        las <em>"media queries"</em> de mi CSS.</P>
+                </section>
+                <section class="main-section" id="Creación_del_HTML5_e_implementación_dentro_del_responsive">
+                    <header>
+                        <h2>Creación del HTML5 e implementación dentro del responsive</h2>
+                    </header>
+                        <P>Vamos a ver qué HTML tenemos que generar para tener este diseño. Vámonos a nuestro editor 
+                        de código. Definido una capa que engloba todo el "site". Dentro de ella, hemos definido un 
+                        <em>'header'</em>, que sería la parte superior con un <em>'nav'</em>, donde tendremos 
+                        nuestro menú. Y un <em>'h1'</em>, donde tendremos nuestro logo. Después hemos creado cuatro 
+                        elementos o bloques distintos. Los definimos con una clase común y una independiente, para 
+                        poder atacar mediante CSS los distintos colores. Dentro del primero definiremos un elemento 
+                        foto, un elemento descripción, donde tendremos un título y una descripción, y un elemento 
+                        de título. Aquí tenemos los tres bloques. Dentro de ellas, semánticamente correcto, una 
+                        imagen, el título, un párrafo y nuestro título de sección. En el segundo bloque, hemos 
+                        definido nuevamente un título, una imagen de apoyo y un texto descriptivo, con un título y 
+                        un párrafo. Nos vamos al código, tenemos nuestro título, nuestra imagen de apoyo y nuestra 
+                        descripción con el título y el párrafo. En tercera posición, nuestro tercer bloque tiene 
+                        un elemento de texto con título y un listado y un título de sección. Aquí tenemos nuestro 
+                        elemento del listado con el título y las opciones del listado. En este caso, es un 
+                        <em>'ul'</em> porque no tiene una numeración, sino, hubiera sido un <em>'ol'</em>. Y 
+                        nuestro título de sección. Y, por último, en cuarta posición tenemos título, párrafo, 
+                        título de sección y nuestro formulario formado por un campo dentro de un <em>'fieldset'</em> 
+                        y nuestro botón de Enviar. Como podéis ver, nuestro HTML está formado semánticamente 
+                        correcto.</P>
+                        <p>Y una de las buenas prácticas es que paséis por el validador de la W3C. Por eso nos 
+                        vamos a ir a nuestro navegador. Vamos a irnos a la subida de archivo. Vamos a elegir el 
+                        <em>'index'</em>, vamos a chequearlo. Así habremos generado el HTML correspondiente a 
+                        nuestro diseño web.</P>
+                </section>
+                <section class="main-section" id="Creación_del_CSS3_e_implementación_en_la_web_responsive">
+                    <header>
+                        <h2>Creación del CSS3 e implementación en la web responsive</h2>
+                    </header>
+                        <p>Vamos a ver qué estilos tenemos que aplicar a nuestro <em>"site"</em> para convertir 
+                        nuestro HTML en el diseño que tenemos tanto para escritorio, como para "tablet", como 
+                        para móvil.</p>
+                        <code><ul>
+                            <li>Lo primero que vamos a hacer es añadir unos comentarios donde iremos generando 
+                            la jerarquía de estilos que vamos a añadir. Creo que es bastante productivo añadir 
+                            estos comentarios para poder saber qué metemos dónde y poder tener potestad sobre lo 
+                            que escribimos. Y de cara a un futuro, después de seis meses que hayáis programado 
+                            algo, os aseguro que apenas nos solemos acordar. Entonces creo que es una buena manera 
+                            meter unos comentarios donde colocar cada una de las cosas.</li>
+                            <li>Después, yo suelo añadir una hoja de <em>'reset'</em>. Y estos estilos lo que 
+                            hacen es, por un lado, resetear todos los estilos de sistema o de navegador a cero 
+                            para poder trabajar con unos elementos HTML que estén nivelados desde cero, que no 
+                            tenga ni <em>"margin"</em> ni <em>"padding"</em> ni nada por el estilo. Además, añade 
+                            la compatibilidad de etiquetas HTML5 para que funcione en los navegadores y otra serie 
+                            de atributos genéricos, que nos ayudarán a realizar nuestra maquetación de manera más 
+                            sencilla.</li>
+                            <li>Además de eso, hemos añadido estilos al 'body'.</li> 
+                            <li>Hemos definido el tamaño del contenedor.</li> 
+                            <li>Hemos definido la estructura flexible.</li> 
+                            <li>Hemos definido el menú,</li> 
+                            <li>los elementosinteriores, títulos, descripciones, subtítulos, cada una de las 
+                            secciones y sus colores.</li> 
+                            <li>El tipo de listado también le hemos dado clases.</li> 
+                            <li>Hemos dado clase también al formulario y a la sección de <em>"inputs"</em>.</li> 
+                            <li>Y por último hemos dejado las <em>"media queries"</em>.</li>
+                        </ul></code> 
+                        <p>Con estos estilos metidos, hemos conseguido renderizar nuestra web teniendo en cuenta 
+                        nuestro diseño. El siguiente paso será generar las <em>"media queries"</em>. Con ellas 
+                        podremos modificar nuestras CSS para que pasen a ser los distintos tamaños de pantalla.</p>
+                </section>
+                <section class="main-section" id="Las_mediaquery_y_su_implementación_en_la_web_responsive">
+                    <header>
+                        <h2>Las mediaquery y su implementación en la web responsive</h2>
+                    </header>
+                        <p>Vamos a ver cómo generar los estilos correspondientes para conseguir que nuestro diseño 
+                        de escritorio sea diseño en dispositivo móvil.</p>
+                        <code><ul>
+                            <li>Lo primero que vamos a hacer es irnos a nuestro código, irnos a la parte de la 
+                            <em>"media query"</em> que afecta al dispositivo móvil y empezar a modificar los 
+                            atributos.</li> 
+                            <li>Hacemos es que los elementos ya no están uno al lado de otro, sino que están uno 
+                            debajo de otro. Para eso vamos a definir, lo primero, sobrescribir el estilo del 
+                            <em>'wrapper'</em>, que en vez de 900 píxeles queremos que mida el 100 %.</li> 
+                            <li>Lo siguiente será decirle que nuestra estructura flexible queremos que pase a ser 
+                            de tipo fila a tipo columna. Ya tenemos todo uno debajo de otro. Una de las razones 
+                            por las que no he utilizado la propiedad común 'flex' y se lo he añadido es porque 
+                            también lo estamos aplicando en el menú. En nuestro caso el diseño, el menú, sigue 
+                            apareciendo exactamente igual.</li> 
+                            <li>Vamos a hacer que la imágen sea <em>responsiva</em>, para ello vamos a añadir el 
+                            atributo de 'max width' al 100 % para que, como máximo, sea igual de grande que donde 
+                            está y que el alto lo calcule automáticamente. Así es como implementaríamos las 
+                            <em>"media queries"</em>.</li>
+                            </ul></code>
+                </section>
+            </main>
+        </body>
+    </html>
