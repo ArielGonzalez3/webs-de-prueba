@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="UTF-8">
+        <title>Administracion de Fincas</title>
+        <link rel="stylesheet" href="styles.css"/>
+    </head>
+    <body>
+        <div class="container">
+            <header class="header">
+              <h1 id="title" class="text-center">Del Meniterraneo</h1>
+              <p id="description" class="description-text-center">
+                Para acceder a toda la informacion de tu piso y finca registrate Aqui.
+              </p>
+            </header>
+            <form id="survey-form">
+              <div class="form-group">
+                <label id="name-label" for="name">Nombre/Name</label>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  class="form-control"
+                  placeholder="Ingresa tu nombre/Enter your name"
+                  required
+                />
+                <label id="name-label" for="name">Primer Apellido/first Lastname</label>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  class="form-control"
+                  placeholder="Ingresa tu primer Apellido/Enter your first Lastname"
+                  required
+                />
+                <label id="name-label" for="name">Segundo Apellido/Second Lastname</label>
+                <input
+                  type="text"
+                  name="name"
+                  id="name"
+                  class="form-control"
+                  placeholder="Ingresa tu segundo Apellido/Enter your second Lastname"
+                />
+              </div>
+              <div class="form-group">
+                <label id="email-label" for="email">Email</label>
+                <input
+                  type="email"
+                  name="email"
+                  id="email"
+                  class="form-control"
+                  placeholder="Ingresa tu Email/Enter your Email"
+                  required
+                />
+              </div>
+              <label id="data" class="form-group" for="data">
+                Fecha de Nacimiento/Date of Birth</label>
+              <input 
+                type="date"
+                mane="trip-start"
+                id="start"
+                value="11/04/2022"
+                min="11/04/1922"
+                max="11/04/2004"
+                required
+              />
+              <div class="form-group">
+                <label id="number-label" for="number"
+                  >Años/Age<span class="clue">(Opcional/Optional)</span></label>
+                <input
+                  type="number"
+                  name="age"
+                  id="number"
+                  min="18"
+                  max="99"
+                  class="form-control"
+                  placeholder="Age"
+                />
+              </div>
+              <div class="form-group">
+                <p>Tipo de Identificacion/ID Type</p>
+                <select id="dropdown" name="role" class="form-control" required>
+                  <option disabled selected value>tipo de ID/ID type</option>
+                  <option value="student">DNI</option>
+                  <option value="job">Pasaporte</option>
+                  <option value="learner">NIE</option>
+                </select>
+                <label id="number-label" for="number"
+                  >Numero ID/ID Number</label>
+                <input
+                  name="Id nuber"
+                  id="number"
+                  class="form-control"
+                  placeholder="A123456B"
+                />
+              </div>
+          
+              <div class="form-group">
+                <p>Genero/Gender</p>
+                <label>
+                  <input
+                    name="user-recommend"
+                    value="definitely"
+                    type="radio"
+                    class="input-radio"
+                    checked
+                  />Hombre/Male</label
+                >
+                <label>
+                  <input
+                    name="user-recommend"
+                    value="maybe"
+                    type="radio"
+                    class="input-radio"
+                  />Mujer/female</label
+                >
+              </div>
+          
+              <div class="form-group">
+                <p>
+                  tipo de Relacion con el Inmueble
+                </p>
+                <select id="most-like" name="mostLike" class="form-control" required>
+                  <option disabled selected value>Select an option</option>
+                  <option value="challenges">Propietario</option>
+                  <option value="projects">Inquilino</option>
+                  <option value="community">Administrador</option>
+                  <option value="openSource">Apoderado</option>
+                </select>
+              </div>
+          
+              <div class="form-group">
+                <p>
+                  Que te une a nosotros?
+                  <span class="clue">(Check all that apply)</span>
+                </p>
+          
+                <label
+                  ><input
+                    name="prefer"
+                    value="front-end-projects"
+                    type="checkbox"
+                    class="input-checkbox"
+                  />Fondo de inversión</label
+                >
+                <label>
+                  <input
+                    name="prefer"
+                    value="back-end-projects"
+                    type="checkbox"
+                    class="input-checkbox"
+                  />Piso en Alquiler</label
+                >
+                <label
+                  ><input
+                    name="prefer"
+                    value="data-visualization"
+                    type="checkbox"
+                    class="input-checkbox"
+                  />Administración de Finca</label
+                >
+                <label
+                  ><input
+                    name="prefer"
+                    value="challenges"
+                    type="checkbox"
+                    class="input-checkbox"
+                  />Piso en Venta</label
+                >
+              </div>
+          
+              <div class="form-group">
+                <p>Algun comerntario, duda o sugerencia</p>
+                <textarea
+                  id="comments"
+                  class="input-textarea"
+                  name="comment"
+                  placeholder="Escriba aqui su comentario/Enter your comment here..."
+                ></textarea>
+              </div>
+          
+              <div>
+                <button type="submit" id="submit" class="submit-button">
+                  Enviar/Submit
+                </button>
+              </div>
+            </form>
+          </div>
+    </body>
+</html>
